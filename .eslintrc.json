@@ -1,0 +1,14 @@
+{
+    "extends": "airbnb",
+    "env": {
+        "browser": true
+    },
+    "rules": {
+        "no-console":"off",
+        "no-plusplus":"off",
+        "no-param-reassign":"off",
+        "no-bitwise": "off",
+        "no-underscore-dangle":"off",
+        "no-unused-expressions":"off"
+    }
+}

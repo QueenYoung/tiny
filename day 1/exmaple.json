@@ -1,0 +1,34 @@
+{
+  "Zena": {
+    "num": 700,
+    "emails": "Clinton_Blick@example.com"
+  },
+  "Shania": {
+    "num": 748,
+    "emails": "Norris.Kunze12@example.org"
+  },
+  "Effie": {
+    "num": 624,
+    "emails": "Clinton_Blick@example.com"
+  },
+  "Rosendo": {
+    "num": 810,
+    "emails": "Norris.Kunze12@example.org"
+  },
+  "Ava": {
+    "num": 964,
+    "emails": "Audreanne96@example.net"
+  },
+  "Jerod_OKeefe": {
+    "num": 275,
+    "emails": "Audreanne96@example.net"
+  },
+  "Isom95": {
+    "num": 151,
+    "emails": "Raul2@example.net"
+  },
+  "Vicente_Barton": {
+    "num": 747,
+    "emails": "Raul2@example.net"
+  }
+}
