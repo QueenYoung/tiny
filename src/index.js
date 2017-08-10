@@ -1,2 +1,1 @@
-import 'bootstrap/dist/css/bootstrap.css';
-// import 'bootstrap';
+import '../Freecodecamp/local weather/weather';

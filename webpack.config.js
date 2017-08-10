@@ -53,14 +53,15 @@ module.exports = {
       jQuery: 'jquery',
       Tether: 'tether',
     }),
-    new CleanWebpackPlugin(['dist'])
+    new CleanWebpackPlugin(['dist']),
   ],
   resolve: {
-    extensions: ['.json', '.js', '.jsx', '.css'],
+    extensions: ['.json', '.js', '.jsx', '.css', '.html'],
   },
   devtool: 'source-map',
   devServer: {
-    contentBase: path.resolve(__dirname, 'dist')
+    contentBase: path.resolve(__dirname, 'dist'),
     hot: true,
+    inline: true,
   },
 };
