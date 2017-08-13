@@ -1,14 +1,21 @@
 {
-    "extends": "airbnb",
+    "extends": ["eslint:recommended", "google"],
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "experimentalObjectRestSpread": true
+        }
+    },
     "env": {
+        "es6": true,
+        "worker": true,
+        "node": true,
         "browser": true
     },
     "rules": {
-        "no-console":"off",
-        "no-plusplus":"off",
-        "no-param-reassign":"off",
-        "no-bitwise": "off",
-        "no-underscore-dangle":"off",
-        "no-unused-expressions":"off"
+        "require-jsdoc":"off",
+        "object-curly-spacing":"off",
+        "no-console": 0
     }
 }

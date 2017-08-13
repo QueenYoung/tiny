@@ -63,5 +63,6 @@ module.exports = {
     contentBase: path.resolve(__dirname, 'dist'),
     hot: true,
     inline: true,
+    color: true,
   },
 };

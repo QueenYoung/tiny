@@ -6,7 +6,7 @@ const helper = {
       [],
     );
   },
-  Range(lower, upper) {
+  range(lower, upper) {
     function* ran() {
       let cur = lower;
       while (cur < upper) {

@@ -31,7 +31,7 @@ async function getWeather() {
     'p',
   );
   positionPar.textContent = 'where';
-  temperaturePar.textContent = `${temp} ⁰`;
+  temperaturePar.textContent = `${temp} º`;
   weatherPar.textContent = main;
 
   document.querySelector('div').appendChild(weatherIcon);
@@ -49,11 +49,11 @@ document.querySelector('a.turnOn').addEventListener('click', (e) => {
 
   let text;
   if (currentUnit === 'celsius') {
-    text = Math.floor((currentTemperature - 32) * 5 / 9);
+    text = (currentTemperature * 9 / 5 + 32).toFixed(1);
     e.target.textContent = 'F';
   } else {
-    text = Math.floor(currentTemperature * 9 / 5) + 32;
+    text = (currentTemperature - 32) * 5 / 9).toFixed(1);
     e.target.textContent = 'C';
   }
-  par.textContent = `${text }⁰`;
+  par.textContent = `${text} º`;
 });
