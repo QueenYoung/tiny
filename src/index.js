@@ -1,1 +1,1 @@
-import '../Freecodecamp/local weather/weather';
+import '../learn/canvas/canvas';

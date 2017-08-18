@@ -1,21 +1,22 @@
 {
-    "extends": ["eslint:recommended", "google"],
-    "parserOptions": {
-        "ecmaVersion": 6,
-        "sourceType": "module",
-        "ecmaFeatures": {
-            "experimentalObjectRestSpread": true
-        }
-    },
-    "env": {
-        "es6": true,
-        "worker": true,
-        "node": true,
-        "browser": true
-    },
-    "rules": {
-        "require-jsdoc":"off",
-        "object-curly-spacing":"off",
-        "no-console": 0
+  "extends": ["eslint:recommended", "google"],
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true,
+      "arrowFunctions": true
     }
+  },
+  "env": {
+    "es6": true,
+    "worker": true,
+    "node": true,
+    "browser": true
+  },
+  "rules": {
+    "require-jsdoc": "off",
+    "object-curly-spacing": "off",
+    "no-console": 0
+  }
 }

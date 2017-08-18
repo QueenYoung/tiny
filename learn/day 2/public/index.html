@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Use XMLHttpRequest</title>
+</head>
+
+<body>
+  <h3>WOw!</h3>
+
+  <form>
+    <button type="submit">Send something</button>
+  </form>
+  <script>
+    const form = document.querySelector('form');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const url = '/cool';
+      const params = {
+        id: '934875',
+        limit: 20
+      };
+
+      const body = Object.keys(params).reduce((body, key) => {
+        body.push(`${key}=${params[key]}`);
+        return body;
+      }, []).join('&');
+
+      fetch(url, {
+        method: 'post',
+        headers: new Headers({
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        }),
+        body: JSON.stringify({ a: 1, b: 2 }),
+        mode: 'cors'
+      }).then(checkStatus)
+        .then(parseJson)
+        .then(json => console.log(json))
+        .catch(err => console.log(err));
+
+      /*
+      fetch('/cool/', {
+        headers: new Headers({
+          'Accept': 'img/jpeg',
+        }),
+        cache: 'default'
+      }).then(checkStatus)
+      .then(res => res.blob()) 
+      .then(blob => {
+        let img = new Image();
+        img.src = URL.createObjectURL(blob);
+        document.body.appendChild(img);
+      }).catch(err => console.log(err));
+  */
+    })
+
+    const parseJson = (res) => res.json();
+    function checkStatus(res) {
+      if (res.status >= 200 && res.status < 300) {
+        return res;
+      } else {
+        throw Error(res.statusText)
+      }
+    }
+  </script>
+</body>
+
+</html>

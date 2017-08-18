@@ -29,7 +29,7 @@ module.exports = {
         use: ['style-loader', 'css-loader'],
       },
       {
-        test: /\.(png|svg|jpg|gif)$/,
+        test: /\.(png|svg|jpg|gif|m4r)$/,
         use: ['file-loader'],
       },
       {
@@ -44,7 +44,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: 'src/index.html',
+      template: './learn/canvas/index.html',
     }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.optimize.CommonsChunkPlugin({ name: 'common' }),
@@ -63,6 +63,5 @@ module.exports = {
     contentBase: path.resolve(__dirname, 'dist'),
     hot: true,
     inline: true,
-    color: true,
   },
 };

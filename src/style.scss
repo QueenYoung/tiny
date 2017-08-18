@@ -1,40 +1,49 @@
-.wrapper {
+html, body {
+  margin: 0;
+  background-color: #eee;
   display: flex;
-  justify-content: space-around;
-  width: 100%;
-  min-height: 600px;
-  position: relative;
-}
-.elementIWantToAnimate {
-  margin: 10px;
-  height: 100px;
-  background: red;
-  width: 100px;
-  /* flex: 0 0 8%; */
-  position: absolute;
+  justify-content: center;
 }
 
-@keyframes elasticity {
-  30% {
-    top: 160px;
-  }
-  50% {
-    top: 200px;
-  }
-  70% {
-    top: 180px;
-  }
-  85% {
-    top: 200px;
-  }
-  
-  90% {
-    top: 190px;
-  }
-  100% {
-    top: 200px;
-  }
+$col: 12;
+@mixin chartValue($data) {
+  $totalRow: 101;
+  $result: $totalRow - $data;
+  grid-row-start: $result;
 }
-.fantan {
-  animation: elasticity 1.2s ease-out;
+.chart {
+  display: grid;
+  grid-template-columns: repeat($col, 1fr);
+  grid-template-rows: repeat(100, 1fr);
+  grid-column-gap: 5px;
+  height: 100vh;
+  width: 100vh;
+  padding: 5px 10px;
+}
+
+.bar {
+  margin: 0;
+  padding: 0;
+  border-radius: 5px 5px 0 0 ;
+  transition: all .6s ease;
+  grid-row-end: 102;
+
+  &:hover {
+    opacity: .5;
+    cursor: pointer;
+  }
+
+  $start: 1, 30, 20, 50, 60, 20, 30, 10, 80, 40, 20, 60;
+  @for $n from 1 through 12 {
+    &:nth-child(#{$n}) {
+      grid-row-start: nth($start, $n);
+    }
+  }
+
+  &:nth-child(odd) {
+    background-color: #ff4136;
+  }
+  &:nth-child(even) {
+    background-color: #0074d9;
+  }
 }
